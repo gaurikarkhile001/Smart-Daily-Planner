@@ -277,7 +277,7 @@ function setupDragAndDrop() {
     draggable.addEventListener('dragstart', (e) => {
       const target = e.target as HTMLElement;
       target.classList.add('dragging');
-      e.dataTransfer?.setData('text/plain', target.dataset.index || '');
+      (e as DragEvent).dataTransfer?.setData('text/plain', target.dataset.index || '');
     });
     
     draggable.addEventListener('dragend', (e) => {
@@ -300,9 +300,9 @@ function setupDragAndDrop() {
   
   taskList.addEventListener('drop', (e) => {
     e.preventDefault();
-    const sourceIndex = parseInt(e.dataTransfer?.getData('text/plain') || '0');
+    // Unused variable removed: const sourceIndex = parseInt((e as DragEvent).dataTransfer?.getData('text/plain') || '0');
     const items = Array.from(taskList.querySelectorAll('.task-item'));
-    const newOrder = items.map(item => parseInt(item.dataset.index || '0'));
+    const newOrder = items.map(item => parseInt((item as HTMLElement).dataset.index || '0'));
     
     // Reorder tasks based on new UI order
     const reorderedTasks: Task[] = [];
@@ -320,7 +320,7 @@ function setupDragAndDrop() {
 function getDragAfterElement(y: number) {
   const draggableElements = [...taskList.querySelectorAll('.task-item:not(.dragging)')];
   
-  return draggableElements.reduce((closest, child) => {
+  return draggableElements.reduce((closest: { offset: number; element: Element | null }, child) => {
     const box = child.getBoundingClientRect();
     const offset = y - box.top - box.height / 2;
     
@@ -360,8 +360,8 @@ function renderTimeBlocks() {
     return convertTimeToMinutes(a.time) - convertTimeToMinutes(b.time);
   });
   
-  blocksToRender.forEach((task, index) => {
-    const actualIndex = tasks.indexOf(task);
+  blocksToRender.forEach(task => {
+    // Unused variable removed: const actualIndex = tasks.indexOf(task);
     const timeBlock = document.createElement('div');
     timeBlock.className = `time-block ${task.completed ? 'completed' : ''}`;
     
