@@ -6,7 +6,7 @@ FocusStack is a productivity planner designed specifically for students in tech 
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://focusstack-planner.vercel.app) (Coming Soon)
+[View Live Demo](https://smart-daily-planner.vercel.app/) 
 
 ## ✨ Features
 
@@ -43,7 +43,7 @@ FocusStack is a productivity planner designed specifically for students in tech 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/focusstack.git
+   git clone https://github.com/gaurikarkhile001/Smart-Daily-Planner.git
    cd focusstack
    ```
 
@@ -68,7 +68,7 @@ FocusStack is a productivity planner designed specifically for students in tech 
 This project is configured for easy deployment to Vercel:
 
 1. Fork/clone this repository to your GitHub account
-2. Sign up for [Vercel](https://vercel.com)
+2. Sign up for [Vercel](https://smart-daily-planner.vercel.app/)
 3. Create a new project and import your GitHub repository
 4. Vercel will automatically detect the Vite configuration
 5. Deploy!
