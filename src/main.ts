@@ -242,7 +242,7 @@ function renderTasks() {
     return convertTimeToMinutes(a.time) - convertTimeToMinutes(b.time);
   });
   
-  tasksToRender.forEach((task, index) => {
+  tasksToRender.forEach(task => {  // Removed unused 'index' parameter
     const actualIndex = tasks.indexOf(task); // Get the actual index in the full tasks array
     const taskItem = document.createElement('li');
     taskItem.className = `task-item ${task.completed ? 'completed' : ''}`;
