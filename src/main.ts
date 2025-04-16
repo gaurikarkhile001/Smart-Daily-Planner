@@ -18,7 +18,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </div>
     </header>
     
-    <h1>Smart Daily Planner</h1>
+    <h1>Study Planner</h1>
     <p>Today: <span id="current-date">${new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</span></p>
     
     <div class="planner-container">
